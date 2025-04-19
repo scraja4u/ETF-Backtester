@@ -1,0 +1,72 @@
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: #f4f4f4;
+}
+.tabs {
+  display: flex;
+  justify-content: center;
+  background: #333;
+}
+.tab-btn {
+  flex: 1;
+  padding: 15px;
+  background: #333;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.tab-btn.active {
+  background: #007bff;
+}
+.tab-content {
+  display: none;
+  padding: 20px;
+}
+.tab-content.active {
+  display: block;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.container.column {
+  flex-direction: column;
+}
+.left, .right {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1;
+  min-width: 320px;
+}
+h2 {
+  margin-top: 0;
+}
+input[type="text"], input[type="number"] {
+  padding: 5px;
+  margin: 5px 0;
+}
+.etf-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #0056b3;
+}
+.summary p {
+  margin: 5px 0;
+}

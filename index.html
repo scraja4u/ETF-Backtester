@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ETF Portfolio Backtest & Forecast</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('backtest')">🔁 Backtest</button>
+    <button class="tab-btn" onclick="switchTab('forecast')">🔮 Forecast</button>
+  </div>
+
+  <div id="backtest" class="tab-content active">
+    <div class="container">
+      <div class="left">
+        <h2>📋 Portfolio Builder</h2>
+        <div id="etf-inputs"></div>
+        <button onclick="addETFRow()">➕ Add ETF</button>
+        <label>Monthly Investment (SGD): <input type="number" id="monthly" value="300" /></label>
+        <button onclick="runBacktest()">Run Backtest</button>
+      </div>
+      <div class="right">
+        <h2>📈 Backtest Results</h2>
+        <canvas id="backtestChart"></canvas>
+        <div class="summary">
+          <p><strong>Total Return:</strong> <span id="total-return">-</span></p>
+          <p><strong>CAGR:</strong> <span id="cagr">-</span></p>
+          <p><strong>Volatility:</strong> <span id="volatility">-</span></p>
+          <p><strong>Max Drawdown:</strong> <span id="drawdown">-</span></p>
+        </div>
+        <button id="download-csv">📥 Download Backtest CSV</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="forecast" class="tab-content">
+    <div class="container column">
+      <h2>📈 Forecast Simulator</h2>
+      <div id="forecast-etfs"></div>
+      <button onclick="addForecastRow()">➕ Add ETF</button>
+      <label>Monthly Investment (SGD): <input type="number" id="forecast-monthly" value="3000" /></label>
+      <label>Investment Duration (Years): <input type="number" id="forecast-years" value="15" /></label>
+      <button onclick="runForecast()">Run Forecast</button>
+      <canvas id="forecastChart"></canvas>
+      <button id="download-forecast">📥 Download Forecast CSV</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
